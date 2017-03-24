@@ -12,7 +12,7 @@
   ],
   "author": "David Chang",
   "license": "MIT",
-  "devDependencies": [
+  "devDependencies": {
     "dotenv": "^4.0.0"
-  ]
+  }
 }
