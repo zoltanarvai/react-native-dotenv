@@ -11,5 +11,8 @@
     "react-native"
   ],
   "author": "David Chang",
-  "license": "MIT"
+  "license": "MIT",
+  devDependencies: [
+    "dotenv": "^4.0.0",
+  ]
 }
