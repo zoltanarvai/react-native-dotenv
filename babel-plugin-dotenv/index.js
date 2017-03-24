@@ -20,6 +20,7 @@ module.exports = function (data) {
                   var config = dotEnv.config({ path: sysPath.join(configDir, '.env'), slient: true }) || {};
                   var platformPath = '.env.'+ (process.env.BABEL_ENV ||'development');
                   var config = Object.assign(config, dotEnv.config({ path: sysPath.join(configDir, platformPath) }));
+                  config = config.parsed;
 
                   path.node.specifiers.forEach(function(specifier, idx){
                     if (specifier.type === "ImportDefaultSpecifier") {
