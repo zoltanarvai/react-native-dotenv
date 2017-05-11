@@ -33,13 +33,13 @@ module.exports = function (data) {
                     var importedId = specifier.imported.name
                     var localId = specifier.local.name;
 
-                    if(!config[importedId]) {
+                    if(typeof config[importedId] === 'undefined') {
                       throw path.get('specifiers')[idx].buildCodeFrameError('Try to import dotenv variable "' + importedId + '" which is not defined in any .env files.')
                     }
 
                     var binding = path.scope.getBinding(localId);
                     binding.referencePaths.forEach(function(refPath){
-                      if (config[importedId]) {
+                      if (typeof config[importedId] !== 'undefined') {
                         refPath.replaceWith(t.valueToNode(config[importedId]))
                       }
                     });
